@@ -1,0 +1,8 @@
+admin 
+username : admin01
+mail : sawadogokevin98@gmail.com
+password : cyphersite01
+
+Author1, Author2, Author3
+username ; Author1, Author2, Author3
+password : author-password
