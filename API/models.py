@@ -96,23 +96,24 @@ class Article(Publication):
     
 class Media(Publication):
     MEDIA_TYPES = (
-        ('O','Other'),
-        ('V','Video'),
-        ('M','Music'),
-        ('P','Podcast'),
-        ('I','Image'),
+        ('0','Other'),
+        ('1','Video'),
+        ('2','Music'),
+        ('3','Podcast'),
+        ('4','Image'),
     )
     
     media_type= models.CharField(
         max_length = 20,
         choices = MEDIA_TYPES,
-        default = 'O'
+        default = '0'
     )
 
     def get_type(self):
         return self.get_media_type_display()
 
     file=models.FileField(upload_to='media/', null=True)
+    header_img = models.FileField(upload_to='images/medias/', null=True)
 
 
 

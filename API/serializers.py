@@ -29,7 +29,7 @@ class MediaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Media
-        fields = ['id','title','publish_date','media_type','active','file']
+        fields = ['id','title','publish_date','media_type','active','file','header_img']
 
 
 class AuthorSerializer(serializers.ModelSerializer):
@@ -103,7 +103,7 @@ class MediaDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Media
         fields = ['id','title','publish_date','update_date','description',
-        'tag','active','media_type','file']
+        'tag','active','media_type','file','header_img']
 
 ######### Admin serializer ################
 
