@@ -48,10 +48,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'API',
+    
+    #CORS
+    "corsheaders",
 
 ]
 
 MIDDLEWARE = [
+    
+    #CORS
+    "corsheaders.middleware.CorsMiddleware",
+    
         #SPA config
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -65,6 +72,30 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+#CORS
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8001",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:8001",
+]
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+    "If-Modified-Since",
+]
+
 
 ROOT_URLCONF = 'cypherAPI.urls'
 
